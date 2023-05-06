@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classification App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+      text-align: center;
+    }
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 10px;
+      margin-top: 30px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      padding: 10px;
+      margin-top: 30px;
+      border-radius: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  {% if prediction %}
+    <h1>The predicted category is:</h1>
+    <p>{{ prediction }}</p>
+    <p>{{input}}</p>
+    <div class="success">This Request is {{prediction}} and it has been Redirected to the {{prediction}} Team</div>
+  {% endif %}
+
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+</body>
+</html>
