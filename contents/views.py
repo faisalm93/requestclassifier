@@ -24,7 +24,7 @@ def classify(request):
                 prediction = temp[1]
 
       
-        return render(request, 'result.html', {'prediction': prediction})
+        return render(request, 'results.html', {'prediction': prediction})
 
     else:
-        return render(request, 'classify.html')
+        return render(request, 'templates/classify.html')
